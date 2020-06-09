@@ -1,0 +1,25 @@
+{
+  "name": "pindonghua",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "dev": "fis3 release -wL",
+    "start": "npm run dev",
+    "build": "fis3 server open"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "fis-parser-node-sass": "^1.0.7"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
