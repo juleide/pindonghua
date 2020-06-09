@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title></title>
+    <style>
+        a:focus{text-decoration: none}
+        .navbar-header #navlist {
+            position: absolute;
+            top: 70px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* 翻译模块 start */
+        .translate-wrap {
+            position: relative;
+            padding-top: 20px;
+            z-index: 0;
+        }
+
+        .translate-wrap .translate-left, .translate-wrap .translate-right {
+            height: 270px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .translate-wrap .translate-left {
+            position: relative;
+            padding-bottom: 40px;
+            margin-bottom: 20px;
+        }
+
+        .translate-wrap .translate-left .form-control {
+            width: 100%;
+            height: 190px;
+            border: none;
+            outline: none;
+            padding: 0;
+            resize: none;
+            box-shadow: none;
+        }
+
+        .translate-wrap .translate-left .fix-btn {
+            position: absolute;
+            bottom: 0;
+            padding: 10px 0 10px 20px;
+        }
+
+        .translate-wrap .translate-left .fix-btn button {
+            width: 120px;
+        }
+
+        .translate-wrap .translate-right {
+            background: #2e5266;
+            margin-top: 0;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .translate-wrap .translate-right .qrcode-box {
+            width: 130px;
+            text-align: center;
+        }
+
+        .translate-wrap .translate-right .qrcode-box img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .translate-wrap .translate-right .qrcode-box p {
+            margin-top: 10px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 22px;
+        }
+        /* 翻译模块 end */
+
+        /* 粤语课程 start */
+        .video-wrap .video-item {
+            display: flex;
+            padding: 15px 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .video-wrap .video-item .poster {
+            width: 235px;
+            height: 130px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 769px) {
+            .video-wrap .video-item .poster {
+                width: 180px;
+                height: 100px;
+            }
+        }
+
+        @media (max-width: 414px) {
+            .video-wrap .video-item .poster {
+                width: 140px;
+                height: 100px;
+            }
+        }
+
+        .video-wrap .video-item .poster img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-wrap .video-item .info {
+            position: relative;
+            flex: 1;
+        }
+
+        .video-wrap .video-item .info .text{
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .video-wrap .video-item .info .label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            color: #999;
+        }
+        /* 翻译模块 end */
+
+        /* 页脚 start */
+        .footer {
+            padding: 30px 0 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .footer a {
+            color: #A7A7A7;
+        }
+
+        .pull-right {
+            float: right;
+        }
+        /* 页脚 end */
+    </style>
+</head>
+
+<body>
+    <!--  Header   -->
+    <nav class="navbar-header navbar navbar-expand-lg navbar-light bg-wight">
+        <div class="container  d-flex justify-content-between align-content-center ">
+            <a href="#" data-toggle="collapse" data-target="#navlist" class="active-icon text-muted">
+                <svg class="bi bi-list" width="26" height="23" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg>
+            </a>
+            <ul id="navlist" class="list-group collapse shadow">
+                <li class="list-group-item border-0 d-flex align-content-center">
+                    <a href="#" class="text-muted">
+                        <svg class="bi bi-star" width="18" height="18" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                        </svg>收藏夹</a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="#" class="text-muted" data-toggle="collapse" data-target="#courselist">
+                        <svg
+                            class="bi bi-window" width="19" height="17" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M14 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
+                            <path fill-rule="evenodd" d="M15 6H1V5h14v1z" />
+                            <path
+                                d="M3 3.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm1.5 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm1.5 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                        </svg>粤语课程</a>
+                    <ul id="courselist" class="list-group collapse">
+                        <li class="list-group-item border-0 bg-light text-secondary">1.零基础课程</li>
+                        <li class="list-group-item border-0 bg-light text-secondary">1.零基础课程</li>
+                        <li class="list-group-item border-0 bg-light text-secondary">1.零基础课程</li>
+                    </ul>
+
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="#" class="text-muted"><svg class="bi bi-phone" width="19" height="17" viewBox="0 0 16 16"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M11 1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                            <path fill-rule="evenodd" d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                        </svg>联系我们</a>
+                </li>
+            </ul>
+
+            <a href="#"> <img height="40" src="./img/logo2.png" tppabs="" />
+            </a>
+
+            <a class="text-muted" href="" tppabs="">
+                <svg class="bi bi-person" width="21" height="26" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                </svg>
+                登陸
+            </a>
+        </div>
+    </nav>
+
+    <!-- translate -->
+    <div class="container translate-wrap">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="translate-left">
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="在此输入或粘贴文本获取粤语翻译及发音"></textarea>
+                        </div>
+                    </form>
+                    <div class="fix-btn">
+                        <button class="btn btn-primary">翻译</button>
+                        <button class="btn btn-info">注音</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div class="translate-right">
+                    <div class="qrcode-box">
+                        <img src="./img/xcx.png">
+                        <p>【拼出广东话】<br>关注微信公众号</p>
+                    </div>
+                    <div class="qrcode-box">
+                        <img src="./img/xcx.png">
+                        <p>【拼出广东话】<br>关注微信公众号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="active">
+                <a href="#home" data-toggle="tab">粤语课程</a>
+            </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active show" id="home">
+                <ul class="video-wrap">
+                    <li class="video-item">
+                        <div class="poster">
+                            <img src="./img/xcx.png">
+                        </div>
+                        <div class="info">
+                            <p class="text">这也许是最有效的零基础粤语（广东话）教程了</p>
+                            <p class="label">
+                                <span>2300 VIEWS</span>
+                                <span class="pull-right">27 Apr 2016</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="video-item">
+                        <div class="poster">
+                            <img src="./img/xcx.png">
+                        </div>
+                        <div class="info">
+                            <p class="text">这也许是最有效的零基础粤语（广东话）教程了</p>
+                            <p class="label">
+                                <span>2300 VIEWS</span>
+                                <span class="pull-right">27 Apr 2016</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="video-item">
+                        <div class="poster">
+                            <img src="./img/xcx.png">
+                        </div>
+                        <div class="info">
+                            <p class="text">这也许是最有效的零基础粤语（广东话）教程了</p>
+                            <p class="label">
+                                <span>2300 VIEWS</span>
+                                <span class="pull-right">27 Apr 2016</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer container">
+        <a class="nav-item" href="#">拼东话首页</a>
+        <a class="nav-item" href="#">使用指南</a>
+        <a class="nav-item" href="#">粤语课程</a>
+        <a class="nav-item" href="#">联系我们</a>
+        <a class="nav-item" href="#">&copy; 2020拼东话</a>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
