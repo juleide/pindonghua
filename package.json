@@ -5,8 +5,8 @@
   "author": "",
   "private": true,
   "scripts": {
+    "start": " fis3 server start -p 8848",
     "dev": "fis3 release -wL",
-    "start": "npm run dev",
     "build": "fis3 server open"
   },
   "dependencies": {},

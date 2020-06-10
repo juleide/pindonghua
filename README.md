@@ -1,10 +1,10 @@
 ## pindonghua
 
 ## 运行项目
-    1、需要安装旧版本node6.0 先安装node版本管理器nvm,在nvm里安装nodejs v6.0.0。
-    2、安装fis3   cnpm install fis3 -g
-    3、安装fis3插件 cnpm install
-    4、运行项目 npm run dev
+    1、安装fis3   cnpm install fis3 -g
+    2、安装fis3插件 cnpm install
+    3、修改端口 npm run start
+    4、运行项目并且浏览器检测实时更改 npm run dev 
     5、最终打包后代码 npm run build
 
 
