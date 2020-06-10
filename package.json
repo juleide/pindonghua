@@ -11,7 +11,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "fis-parser-node-sass": "^1.0.7"
+    "fis-parser-node-sass": "^1.0.7",
+    "fis3": "^3.4.44"
   },
   "engines": {
     "node": ">= 6.0.0",
