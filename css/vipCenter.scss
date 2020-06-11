@@ -1,0 +1,138 @@
+.loginBox{
+    width: 100vw;
+    // height: 600px;
+    background: url('../img/timg.jpeg');
+    background-size: contain;
+    margin: 0 auto;
+    padding: 30px 0;
+    .login{
+        width: 600px;
+        background-color: white;
+        border-radius: 15px;
+        // height: 400px;
+        padding: 30px;
+        .name{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .div{
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            height: 30px;
+            margin-bottom: 10px;
+            .titleLeft{
+                display: inline-block;
+                width: 25%;
+                min-width: 140px;
+                line-height: 28px;
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+                border-right: 1px solid #333;
+                text-indent: 10px;
+                background-color: #eee;
+            }
+            .exitBtn{
+                width: 100px;
+                height: 28px;
+                background-color: #919ba2;
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+                line-height: 28px;
+                text-align: center;
+                font-size: 14px;
+                color: white;
+            }
+            .num1{
+                width: 40%;
+            }
+            .num2{
+                width: 66%;
+            }
+            &.flex{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        .button{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 6px;
+            background-color: #738796;
+            font-size: 14px;
+            color: white;
+            margin-bottom: 20px;
+            &.color{
+                background-color: #919ba2;
+            }
+        }
+        .list{
+            display: flex;
+            flex-wrap: wrap;
+            .item{
+                width: 45%;
+                height: 200px;
+                margin: 0 10% 10% 0;
+                background-color: #f6f6f6;
+                .content{
+                    height: 170px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    .title{
+                        .img{
+                            width: 20px;
+                            height: 20px;
+                            vertical-align: middle;
+                        }
+                        .text{
+                            color: #e6c35f;
+                        }
+                    }
+                    .price{
+                        .priceText{
+                            font-size: 22px;
+                        }
+                        &.del{
+                            text-decoration: line-through;
+                        }
+                    }
+                    .buyText{
+                        color: #999;
+                        font-size: 14px;
+                    }
+                    .buyActive{
+                        color: red;
+                        font-size: 18px;
+                    }
+                }
+                .buy{
+                    width: 100%;
+                    background-color: #e6c35f;
+                    line-height: 30px;
+                    text-align: center;
+                    color: white;
+                    font-size: 14px;
+                }
+            }
+            .item:nth-of-type(2n+2){
+                margin-right: 0;
+            }
+        }
+    }
+    
+}
+@media (max-width: 769px) {
+    .loginBox{
+        background: url('');
+        .login{
+            width: 100vw;
+            padding: 15px;
+        }
+    }
+}
