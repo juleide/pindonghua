@@ -10,11 +10,48 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/common.scss">
+    <link rel="stylesheet" href="../css/orderConfim.scss">
     <title>拼东话</title>
 </head>
 
 <body>
     <link rel="import" href="./template/header.html?__inline">
+
+    <div class="order-confirm">
+        <div class="order-box container">
+            <div class="name">订单确认</div>
+            <div class="div flex">
+                <span class="title">订单名称</span>
+                <span class="input">一年会员</span>
+            </div>
+            <div class="div flex">
+                <span class="title">订单号码</span>
+                <span class="input">1234567890</span>
+            </div>
+            <div class="div flex">
+                <span class="title">创建时间</span>
+                <span class="input">2020年5月24日 20:14:19</span>
+            </div>
+            <div class="div flex">
+                <span class="title">应付金额</span></span>
+                <span class="money text-center">
+                    <div class="m-box right-border">￥99<font>（微信支付）</font></div>
+                    <div class="m-box">￥99<font>（PayPal支付）</font></div>
+                </span>
+            </div>
+            <div class="pay-type text-center">支付方式</div>
+            <div class="pay-channel">
+                <button class="wechat box">
+                    <img src="../img/wechat.png">
+                    <span>微信支付</span>
+                </button>
+                <button class="paypal box">
+                    <img src="../img/paypal.png">
+                    <span>Paypal</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <link rel="import" href="./template/footer.html?__inline">
 
