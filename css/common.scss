@@ -5,6 +5,7 @@ a:focus {
 .navbar-header #navlist {
     position: absolute;
     top: 70px;
+    z-index: 10;
 }
 
 * {
