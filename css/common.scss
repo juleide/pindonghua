@@ -22,6 +22,11 @@ li {
 a {
     text-decoration: none;
 }
+select, input{
+    border: none;
+    outline: none;
+    appearance: none;
+}
 
 /* 翻译模块 start */
 .translate-wrap {

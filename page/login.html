@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/common.scss">
+    <link rel="stylesheet" href="../css/login.scss">
     <title>拼东话</title>
 </head>
 
@@ -35,8 +36,7 @@
                 </li>
                 <li class="list-group-item border-0">
                     <a href="#" class="text-muted" data-toggle="collapse" data-target="#courselist">
-                        <svg
-                            class="bi bi-window" width="19" height="17" viewBox="0 0 16 16" fill="currentColor"
+                        <svg class="bi bi-window" width="19" height="17" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M14 2H2a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z" />
@@ -75,83 +75,31 @@
         </div>
     </nav>
 
-    <!-- translate -->
-    <div class="container translate-wrap">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="translate-left">
-                    <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="在此输入或粘贴文本获取粤语翻译及发音"></textarea>
-                        </div>
-                    </form>
-                    <div class="fix-btn">
-                        <button class="btn btn-primary">翻译</button>
-                        <button class="btn btn-info">注音</button>
-                    </div>
-                </div>
+    <!-- login -->
+    <div class="loginBox">
+        <div class="login container">
+            <div class="name">面 密 码 登 录</div>
+            <div class="div flex">
+                <span class="titleLeft">您 的 国 家 / 地 区</span>
+                <select name="" id="" class="signInput">
+                    <option value="86" checked>中国 +86</option>
+                    <option value="86">中国 +86</option>
+                    <option value="86">中国 +86</option>
+                    <option value="86">中国 +86</option>
+                </select>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="translate-right">
-                    <div class="qrcode-box">
-                        <img src="../img/xcx.png">
-                        <p>【拼出广东话】<br>关注微信公众号</p>
-                    </div>
-                    <div class="qrcode-box">
-                        <img src="../img/xcx.png">
-                        <p>【拼出广东话】<br>关注微信公众号</p>
-                    </div>
-                </div>
+            <div class="div">
+                <input type="tel" placeholder="手机号" maxlength="11" class="telInput">
             </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <ul id="myTab" class="nav nav-tabs">
-            <li class="active">
-                <a href="#home" data-toggle="tab">粤语课程</a>
-            </li>
-        </ul>
-        <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade in active show" id="home">
-                <ul class="video-wrap">
-                    <li class="video-item">
-                        <div class="poster">
-                            <img src="../img/xcx.png">
-                        </div>
-                        <div class="info">
-                            <p class="text">这也许是最有效的零基础粤语（广东话）教程了</p>
-                            <p class="label">
-                                <span>2300 VIEWS</span>
-                                <span class="pull-right">27 Apr 2016</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="video-item">
-                        <div class="poster">
-                            <img src="../img/xcx.png">
-                        </div>
-                        <div class="info">
-                            <p class="text">这也许是最有效的零基础粤语（广东话）教程了</p>
-                            <p class="label">
-                                <span>2300 VIEWS</span>
-                                <span class="pull-right">27 Apr 2016</span>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="video-item">
-                        <div class="poster">
-                            <img src="../img/xcx.png">
-                        </div>
-                        <div class="info">
-                            <p class="text">这也许是最有效的零基础粤语（广东话）教程了</p>
-                            <p class="label">
-                                <span>2300 VIEWS</span>
-                                <span class="pull-right">27 Apr 2016</span>
-                            </p>
-                        </div>
-                    </li>
-                </ul>
+            <div class="div flex">
+                <input type="number" placeholder="输入6位短信验证码" maxlength="6" class="codeInput">
+                <span class="codeBtn">获 取 验 证 码</span>
+            </div>
+            <div class="loginBtn">登 陆</div>
+            <div class="error">我是错误</div>
+            <div class="qr">
+                <img class="qrImg" src="../img/xcx.png">
+                <p>【拼出广东话】<br>关注微信公众号</p>
             </div>
         </div>
     </div>
@@ -168,14 +116,14 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
