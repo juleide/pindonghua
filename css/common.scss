@@ -1,7 +1,7 @@
 a:focus {
     text-decoration: none
 }
-
+/* header */
 .navbar-header #navlist {
     position: absolute;
     top: 70px;
@@ -59,6 +59,34 @@ button {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+/* 公共区域部分 */
+.content-box{
+    width: 100vw;
+    background: url('../img/timg.jpeg') no-repeat;
+    background-size:100% 300px; 
+    padding: 30px 0;
+    .white-content{
+        width: 600px;
+        background-color: white;
+        border-radius: 15px;
+        border-bottom-left-radius:0 ;
+        border-bottom-right-radius:0 ;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 769px) {
+    .content-box{
+        background: none;
+        .white-content{
+            width: 100vw;
+            padding: 15px;
+        }
+    }
+}
+
+
 
 /* 翻译模块 start */
 .translate-wrap {
