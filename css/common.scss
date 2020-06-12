@@ -6,6 +6,16 @@ a:focus {
     position: absolute;
     top: 70px;
     z-index: 10;
+    color: #8e9ba3;
+    span.align-middle{
+        display: inline-block;
+        width: 91px;
+        padding-left:9px ;
+        text-align-last:justify;
+        text-align:justify;
+        text-justify:distribute-all-lines;
+    }
+    
 }
 
 * {
