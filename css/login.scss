@@ -1,16 +1,5 @@
-.loginBox{
-    width: 100vw;
-    // height: 600px;
-    background: url('../img/timg.jpeg');
-    background-size: contain;
-    margin: 0 auto;
-    padding: 30px 0;
+.login-box{
     .login{
-        width: 600px;
-        background-color: white;
-        border-radius: 15px;
-        // height: 400px;
-        padding: 30px;
         .name{
             text-align: center;
             margin-bottom: 10px;
@@ -22,7 +11,7 @@
             border-radius: 6px;
             height: 30px;
             margin-bottom: 10px;
-            .titleLeft{
+            .title-left{
                 display: inline-block;
                 width: 40%;
                 min-width: 140px;
@@ -33,16 +22,16 @@
                 text-indent: 10px;
                 background-color: #eee;
             }
-            .signInput{
+            .sign-input{
                 width: 50%;
                 max-width: 250px;
                 height: 28px;
             }
-            .telInput{
+            .tel-input{
                 line-height: 28px;
                 text-indent: 10px;
             }
-            .codeInput{
+            .code-input{
                 line-height: 28px;
                 text-indent: 10px;
                 width: 54%;
@@ -52,7 +41,7 @@
                 align-items: center;
                 justify-content: space-between;
             }
-            .codeBtn{
+            .code-btn{
                 width: 46%;
                 line-height: 30px;
                 text-align: center;
@@ -64,7 +53,7 @@
                 display: inline-block;
             }
         }
-        .loginBtn{
+        .login-btn{
             width: 100%;
             height: 30px;
             line-height: 30px;
@@ -94,15 +83,6 @@
                 height: 100px;
 
             }
-        }
-    }
-}
-@media (max-width: 769px) {
-    .loginBox{
-        background: url('');
-        .login{
-            width: 100vw;
-            padding: 15px;
         }
     }
 }
