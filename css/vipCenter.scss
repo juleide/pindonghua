@@ -1,9 +1,5 @@
 .login-box{
     .login{
-        .name{
-            text-align: center;
-            margin-bottom: 10px;
-        }
         .div{
             width: 100%;
             font-size: 16px;
@@ -39,11 +35,7 @@
             .num2{
                 width: 66%;
             }
-            &.flex{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+
         }
         .button{
             width: 100%;
@@ -115,4 +107,25 @@
         }
     }
     
+}
+
+.paln-table{
+    td, .table th {
+        border: none;
+        text-align: center;
+    }
+    border-collapse: separate;
+    .c-plus{
+      color:  #ecc349;
+    }
+    .info-content{
+        width: 36%;
+    }
+    .user-content{
+        width: 23%;
+    }
+    .plus-content {
+        width:41%
+    }
+
 }

@@ -21,18 +21,18 @@
     <!-- login -->
     <div class="login-box content-box">
         <div class="login container white-content">
-            <div class="div flex">
+            <div class="div d-flex justify-content-between align-items-center ">
                 <span class="title-left">会 员 帐 号</span>
                 <div class="num1 ellipsis">+8618232489849</div>
                 <button class="exit-btn">退 出</button>
             </div>
-            <div class="div flex">
-                <span class="title-left">会 员 帐 号</span>
+            <div class="div d-flex justify-content-between align-items-center ">
+                <span class="title-left">会 员 有 效 期</span>
                 <div class="num2 ellipsis">至2020年5月20日,还剩235天</div>
             </div>
-            <div class="button">延长会员到期时间</div>
-            <div class="button color">订单查询</div>
-            <div class="button">收藏夹</div>
+            <button class="button">延长会员到期时间</button>
+            <button class="button color">订单查询</button>
+            <button class="button">收藏夹</button>
             <div class="list">
                 <div class="item">
                     <div class="content">
@@ -45,7 +45,7 @@
                         </div>
                         <div class="buy-text">(仅可购买一次)</div>
                     </div>
-                    <div class="buy">购 买</div>
+                    <button type="button" class="buy rounded">购 买</button>
                 </div>
                 <div class="item">
                     <div class="content">
@@ -58,7 +58,7 @@
                         </div>
                         <div class="buy-active">限时促销价: 30元</div>
                     </div>
-                    <div class="buy">购 买</div>
+                    <button type="button" class="buy rounded">购 买</button>
                 </div>
                 <div class="item">
                     <div class="content">
@@ -71,7 +71,7 @@
                         </div>
                         <div class="buy-active">限时促销价: 30元</div>
                     </div>
-                    <div class="buy">购 买</div>
+                    <button type="button" class="buy rounded">购 买</button>
                 </div>
                 <div class="item">
                     <div class="content">
@@ -84,9 +84,93 @@
                         </div>
                         <div class="buy-active">限时促销价: 30元</div>
                     </div>
-                    <div class="buy">购 买</div>
+                    <button type="button" class="buy rounded">购 买</button>
                 </div>
             </div>
+            <table class="table paln-table" cellspacing="2">
+                <thead>
+                    <tr>
+                        <th class="text-center info-content">方案对比详情
+                        </th>
+                        <th class="text-center user-content">游客</th>
+                        <th class="c-plus plus-content text-center">会员
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>每日查询额度</td>
+                        <td>100字
+                        </td>
+                        <td>100字
+                        </td>
+                    </tr>
+                    <tr class="bg-light">
+                        <td>每次查询限制</td>
+                        <td>20字
+                        </td>
+                        <td>无限制
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>收藏夹
+                        </td>
+                        <td>
+                            <img src="/img/no_icon.png" alt="" srcset="" width="18" height="18">
+                        </td>
+                        <td><img src="/img/yes_icon.png" alt="" srcset="" width="18" height="18">
+                        </td>
+                    </tr>
+                    <tr class="bg-light">
+                        <td class="align-middle">注音选择
+                        </td>
+                        <td class="align-middle">拼东话粤语自然拼读音标
+                        </td>
+                        <td class="align-middle">
+                            <p class="text-left mb-0">①拼东话粤语自然拼读音标</p>
+                            <p class="text-left mb-0">②拼东话自然拼读音标（上标）</p>
+                            <p class="text-left mb-0">③香港语言学会粤拼</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle">费用
+                        </td>
+                        <td class="align-middle">
+                            免费
+                        </td>
+                        <td class="align-middle p-0">
+                            <table class="mr-0 w-100 ">
+                                <tbody>
+                                    <tr>
+                                        <td class="bg-light align-middle">7天
+                                        </td>
+                                        <td class="align-middle">
+                                            9.9元
+                                            <br />
+                                            （仅可购买一次）
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1个月
+                                        </td>
+                                        <td class="bg-light ">50元</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bg-light">3个月
+                                        </td>
+                                        <td>100元</td>
+                                    </tr>
+                                    <tr>
+                                        <td>一年
+                                        </td>
+                                        <td class="bg-light ">268元</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -98,13 +182,13 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
+        </script>
 </body>
 
 </html>
