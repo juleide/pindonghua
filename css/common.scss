@@ -84,6 +84,7 @@ button {
 @media (max-width: 769px) {
     html,body{
         background: #fff;
+        font-size: 14px;
     }
     .content-box{
         background: none;
@@ -104,8 +105,9 @@ button {
     z-index: 0;
 
     .translate-left,
-    .translate-right {
-        height: 270px;
+    .translate-right,
+    .translate-content {
+        min-height: 300px;
         border: 1px solid #eee;
         border-radius: 20px;
         padding: 20px;
@@ -173,6 +175,17 @@ button {
                 font-size: 14px;
                 line-height: 22px;
             }
+        }
+    }
+
+    .translate-content{
+        background: #2e5266;
+        img{
+            width: 25px;
+        }
+        .pron-text{
+            color: #ecc349;
+            margin: 0 5px;
         }
     }
 }
