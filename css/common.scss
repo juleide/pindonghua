@@ -54,6 +54,20 @@ button {
     outline: none; //消除默认点击蓝色边框效果
 }
 
+.btn-bg1{
+    background: #6E8897;
+    border-color: #6E8897;
+    color: #fff;
+}
+.btn-bg2{
+    background: #8E9BA3;
+    border-color: #8E9BA3;
+    color: #fff;
+}
+
+.btn:hover{
+    color: #fff;
+}
 /* 省略号 */
 .ellipsis {
     overflow: hidden;
