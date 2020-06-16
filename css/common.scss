@@ -100,8 +100,33 @@ button {
         background: #fff;
         font-size: 14px;
     }
+    .video-wrap .video-item .poster {
+        width: 180px !important;
+        height: 100px !important;
+    }
+    #code-content{
+        display: none;
+    }
     #footer{
         display: none;
+    }
+    #change-list{
+        
+        transform: translate3d(0px, 88px, 0px); 
+        transition-duration: 0ms; 
+        transition-property: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        li{
+            width: 100%;
+            background: #fff;
+            padding: 5px 0;
+            border: 1px solid ;
+        }
     }
     .content-box{
         background: none;
@@ -110,6 +135,22 @@ button {
             width: 100vw;
             padding: 15px;
         }
+    }
+}
+
+
+
+@media (max-width: 414px) {
+    .video-wrap .video-item .poster {
+        width: 140px !important;
+        height: 100px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .video-wrap .video-item .poster {
+        width: 120px !important;
+        height: 90px !important;
     }
 }
 
@@ -192,6 +233,7 @@ button {
                 font-size: 14px;
                 line-height: 22px;
             }
+           
         }
     }
 
@@ -203,6 +245,26 @@ button {
         .pron-text{
             color: #ecc349;
             margin: 0 5px;
+        }
+        .button-content{
+            position: relative;
+        }
+        #change-list{
+                display: none;
+                position: absolute;
+                top:120px;
+                right:10%;
+                z-index: 100;
+                color: #859ead;
+                font-size: 14px;
+                min-width: 200px;
+                cursor: pointer;
+                li:nth-child(odd){
+                    background: #1c3a47;
+                }
+                li:nth-child(even){
+                    background: #000;
+                }
         }
     }
 }
@@ -272,26 +334,7 @@ button {
     }
 }
 
-@media (max-width: 769px) {
-    .video-wrap .video-item .poster {
-        width: 180px !important;
-        height: 100px !important;
-    }
-}
 
-@media (max-width: 414px) {
-    .video-wrap .video-item .poster {
-        width: 140px !important;
-        height: 100px !important;
-    }
-}
-
-@media (max-width: 375px) {
-    .video-wrap .video-item .poster {
-        width: 120px !important;
-        height: 90px !important;
-    }
-}
 
 /* 粤语课程 end */
 

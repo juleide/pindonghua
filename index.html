@@ -37,15 +37,15 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-xs-12 col-sm-12 col-md-6">
+            <!-- <div class="col-xs-12 col-sm-12 col-md-6" id="code-content">
                 <div class="translate-right">
                     <div class="qrcode-box">
-                        <img src="./img/xcx.png">
+                        <img src="./img/gzh.png">
                         <p>【拼出广东话】<br>关注微信公众号</p>
                     </div>
                     <div class="qrcode-box">
                         <img src="./img/xcx.png">
-                        <p>【拼出广东话】<br>关注微信公众号</p>
+                        <p>【拼出广东话】<br>关注微信小程序</p>
                     </div>
                 </div>
             </div> -->
@@ -54,20 +54,30 @@
                 <div class="translate-content">
                     <p class="text-justify text-white">翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容</p>
                     <div class="button-content d-flex justify-content-between w-75 pb-3">
-                        <a href="javascript:;">
+                        <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
+                            title="发音">
                             <img src="img/voice.png" alt="" srcset="">
                         </a>
-                        <a href="javascript:;">
+                        <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
+                            title="添加收藏夹">
                             <img src="img/add.png" alt="" srcset="">
                         </a>
-                        <a href="javascript:;">
+                        <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
+                            title="复制翻译内容">
                             <img src="img/copy.png" alt="" srcset="">
                         </a>
-                        <a href="javascript:;">
-                            <img src="img/change.png" alt="" srcset="">
+                        <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
+                            title="切换注音">
+                            <img src="img/change.png" alt="" srcset="" onclick="changTranslate()">
                         </a>
                     </div>
-                    <div class="pt-2">
+                    <ul id="change-list">
+                        <li class="text-center px-1">拼东话®粤语自然拼读音标</li>
+                        <li class="text-center px-1">拼东话®自然拼读音标（上标） </li>
+                        <li class="text-center px-1">香港语言学会粤拼</li>
+                        <li class="text-center px-1" onclick="closeTranslate()">关闭注音 </li>
+                    </ul>
+                    <div class="pt-2 border-top phonetic-box">
                         <p class="text-justify text-white">
                             <span class="text-nowrap ">内容<span class="pron-text">gei1/gei2 </span></span>
                             <span class="text-nowrap ">内容<span class="pron-text">gei1/gei2 </span></span>
@@ -155,6 +165,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script>
+        //js 提示
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+
+        })
+        function changTranslate() {
+            $('#change-list').show();
+        }
+        function closeTranslate(){
+            $('#change-list').hide();
+            $('.phonetic-box').hide()
+        }
+    </script>
 </body>
 
 </html>
