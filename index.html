@@ -8,8 +8,140 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="./css/common.scss">
     <title>拼东话</title>
+    <style>
+        /* mobile select */
+        .select-moob {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            display: none;
+        }
+
+        .select-moob-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1
+        }
+
+        .select-moob-container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 200px;
+            background-color: #fff;
+            z-index: 1000;
+            animation: aclstop .3s 1 forwards;
+            -webkit-animation: aclstop .3s 1 forwards;
+            -webkit-overflow-scrolling: touch
+        }
+
+        @-webkit-keyframes aclstop {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+                -moz-transform: translateY(100px);
+                -ms-transform: translateY(100px);
+                -webkit-transform: translateY(100px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -webkit-transform: translateY(0)
+            }
+        }
+
+        @keyframes aclstop {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+                -moz-transform: translateY(100px);
+                -ms-transform: translateY(100px);
+                -webkit-transform: translateY(100px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -webkit-transform: translateY(0)
+            }
+        }
+
+        .select-moob-title {
+            height: 48px;
+            background-color: #f5f5f5;
+            padding: 0 20px;
+
+        }
+
+        .select-moob-title>div {
+            font-size: 15px;
+            letter-spacing: 1px;
+            color:#55a3f2;
+            line-height: 48px;
+            cursor: pointer
+        }
+
+        .select-moob-title .cancel {
+            float: left
+        }
+
+        .select-moob-title .determine {
+            float: right
+        }
+
+        .select-moob-content {
+            height: 150px;
+            overflow: auto
+        }
+
+        .select-moob-content .sw-select {
+            height: 144px;
+            position: relative
+        }
+
+        .select-moob-content .sw-select:before {
+            content: '';
+            position: absolute;
+            top: 33%;
+            left: 0;
+            right: 0;
+            height: 48px;
+            border-top: 1px solid #f1f1f1;
+            border-bottom: 1px solid #f1f1f1
+        }
+
+        .select-moob-content .swiper-slide {
+            text-align: center;
+            line-height: 48px;
+            opacity: .5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .select-moob-content .swiper-slide-active {
+            opacity: 1;
+            font-size: 15px
+        }
+
+        
+    </style>
 </head>
 
 <body>
@@ -67,16 +199,21 @@
                             <img src="img/copy.png" alt="" srcset="">
                         </a>
                         <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
-                            title="切换注音">
-                            <img src="img/change.png" alt="" srcset="" onclick="changTranslate()">
+                            title="切换注音" class="pc-change_icon">
+                            <img src="img/change.png" alt="" srcset="" onclick="showpcChose()">
+                        </a>
+                        <a href="javascript:;" class="mobile-chang_icon">
+                            <img src="img/change.png" alt="" srcset="" onclick="showmobileChose()">
                         </a>
                     </div>
-                    <ul id="change-list">
-                        <li class="text-center px-1">拼东话®粤语自然拼读音标</li>
-                        <li class="text-center px-1">拼东话®自然拼读音标（上标） </li>
-                        <li class="text-center px-1">香港语言学会粤拼</li>
-                        <li class="text-center px-1" onclick="closeTranslate()">关闭注音 </li>
+                    <!-- pc change translate -->
+                    <ul class="change-list pc-change">
+                        <li class="text-center px-1" value="1" onclick="getListValve(this)">拼东话®粤语自然拼读音标</li>
+                        <li class="text-center px-1" value="2" onclick="getListValve(this)">拼东话®自然拼读音标（上标） </li>
+                        <li class="text-center px-1" value="3" onclick="getListValve(this)">香港语言学会粤拼</li>
+                        <li class="text-center px-1" value="4" onclick="closeTranslate()">关闭注音 </li>
                     </ul>
+
                     <div class="pt-2 border-top phonetic-box">
                         <p class="text-justify text-white">
                             <span class="text-nowrap ">内容<span class="pron-text">gei1/gei2 </span></span>
@@ -94,7 +231,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <ul id="myTab" class="nav nav-tabs">
             <li class="active">
@@ -165,20 +301,74 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
     <script>
+
         //js 提示
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
 
         })
-        function changTranslate() {
-            $('#change-list').show();
-        }
-        function closeTranslate(){
-            $('#change-list').hide();
+        function closeTranslate() {
+            $('.change-list').hide();
             $('.phonetic-box').hide()
         }
+
+        function showpcChose() {
+            $('.pc-change').show()
+        }
+
+        function showmobileChose() {
+            $('.mobile-change').show();
+            var swipersff = new Swiper('.swiper-container', {
+                direction: 'vertical', autoHeight: true, slidesPerView: 3, centeredSlides: true, observer: true, observeParents: true, observeSlideChildren: true,
+                on: {
+                    slideChangeTransitionEnd: function () {
+                        var activeIndex  = this.activeIndex;
+                        var target = document.getElementsByClassName('mobile-option')[activeIndex];
+                        getListValve(target)
+                    },
+                }
+            });
+        }
+        function hidemobileChose() {
+            $('.mobile-change').hide()
+        }
+
+        function getListValve(target){
+            console.log($(target).attr('value'));
+            
+            return $(target).attr('value');
+            
+        }
+
+
     </script>
+    <!-- mobile change-translate -->
+    <div class="select-moob mobile-change">
+        <div class="select-moob-cover" onclick="hidemobileChose()"></div>
+        <div class="select-moob-container">
+            <div class="select-moob-title">
+                <div class="cancel" onclick="hidemobileChose()">取消</div>
+                <div class="determine">确定</div>
+            </div>
+            <div class="select-moob-content">
+                <div
+                    class="swiper-container sw-select swiper-container-initialized swiper-container-vertical swiper-container-autoheight swiper-container-ios">
+                    <div class="swiper-wrapper"
+                        style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); height: 48px;">
+                        <div class="swiper-slide swiper-slide-prev mobile-option" value="1" style="height: 48px;">拼东话®粤语自然拼读音标
+                        </div>
+                        <div class="swiper-slide swiper-slide-active mobile-option" value="2" style="height: 48px;">拼东话®自然拼读音标（上标）
+                        </div>
+                        <div class="swiper-slide swiper-slide-next mobile-option" value="3" style="height: 48px;">香港语言学会粤拼
+                        </div>
+                        <div class="swiper-slide mobile-option" value="4" style="height: 48px;">关闭注音</div>
+                    </div> <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

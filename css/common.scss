@@ -1,22 +1,7 @@
 a:focus {
     text-decoration: none
 }
-/* header */
-.navbar-header #navlist {
-    position: absolute;
-    top: 70px;
-    z-index: 10;
-    color: #8e9ba3;
-    span.align-middle{
-        display: inline-block;
-        width: 90px;
-        padding-left:9px ;
-        text-align-last:justify;
-        text-align:justify;
-        text-justify:distribute-all-lines;
-    }
-    
-}
+
 
 * {
     padding: 0;
@@ -50,8 +35,8 @@ input {
 button {
     margin: 0;
     padding: 0;
-    border: 1px solid transparent; //自定义边框
-    outline: none; //消除默认点击蓝色边框效果
+    border: 1px solid transparent; 
+    outline: none; 
 }
 
 .btn-bg1{
@@ -68,18 +53,35 @@ button {
 .btn:hover{
     color: #fff;
 }
-/* 省略号 */
+
 .ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-/* 公共区域部分 */
+/* header */
+.navbar-header #navlist {
+    position: absolute;
+    top: 70px;
+    z-index: 10;
+    color: #8e9ba3;
+    span.align-middle{
+        display: inline-block;
+        width: 90px;
+        padding-left:9px ;
+        text-align-last:justify;
+        text-align:justify;
+        text-justify:distribute-all-lines;
+    }
+    
+}
+
+/* content-box */
 .content-box{
     width: 100vw;
-    background: url('../img/timg.jpeg') no-repeat;
-    background-size:100% 300px; 
+    background: url('../img/background3.jpg') no-repeat;
+    background-size:100% auto; 
     padding: 30px 0;
     margin-top:24 ;
 
@@ -95,68 +97,8 @@ button {
     }
 }
 
-@media (max-width: 769px) {
-    html,body{
-        background: #fff;
-        font-size: 14px;
-    }
-    .video-wrap .video-item .poster {
-        width: 180px !important;
-        height: 100px !important;
-    }
-    #code-content{
-        display: none;
-    }
-    #footer{
-        display: none;
-    }
-    #change-list{
-        
-        transform: translate3d(0px, 88px, 0px); 
-        transition-duration: 0ms; 
-        transition-property: none;
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        background: #fff;
-        li{
-            width: 100%;
-            background: #fff;
-            padding: 5px 0;
-            border: 1px solid ;
-        }
-    }
-    .content-box{
-        background: none;
-        padding: 0;
-        .white-content{
-            width: 100vw;
-            padding: 15px;
-        }
-    }
-}
 
-
-
-@media (max-width: 414px) {
-    .video-wrap .video-item .poster {
-        width: 140px !important;
-        height: 100px !important;
-    }
-}
-
-@media (max-width: 375px) {
-    .video-wrap .video-item .poster {
-        width: 120px !important;
-        height: 90px !important;
-    }
-}
-
-
-
-/* 翻译模块 start */
+/* translate*/
 .translate-wrap {
     position: relative;
     padding-top: 20px;
@@ -249,7 +191,7 @@ button {
         .button-content{
             position: relative;
         }
-        #change-list{
+        .change-list{
                 display: none;
                 position: absolute;
                 top:120px;
@@ -266,12 +208,14 @@ button {
                     background: #000;
                 }
         }
+        .mobile-chang_icon{
+            display: none;
+        }
     }
 }
 
-/* 翻译模块 end */
 
-/* 粤语课程 start */
+/* course video */
 .nav-tabs {
     li.active {
         border-bottom: 2px solid #6E8897;
@@ -335,10 +279,7 @@ button {
 }
 
 
-
-/* 粤语课程 end */
-
-/* 页脚 start */
+/* footer */
 .footer {
     padding: 30px 0 20px;
     text-align: center;
@@ -353,8 +294,57 @@ button {
     }
 }
 
-/* 页脚 end */
 
 .pull-right {
     float: right;
 }
+
+
+@media (max-width: 769px) {
+   
+}
+
+
+
+@media (max-width: 414px) {
+    html,body{
+        background: #fff;
+        font-size: 14px;
+    }
+    .video-wrap .video-item .poster {
+        width: 180px !important;
+        height: 100px !important;
+    }
+    #code-content{
+        display: none;
+    }
+    #footer{
+        display: none;
+    }
+    .translate-wrap .translate-content .mobile-chang_icon{
+        display: block;
+    }
+    .pc-change_icon{
+        display: none;
+    }
+    .content-box{
+        background: none;
+        padding: 0;
+        .white-content{
+            width: 100vw;
+            padding: 15px;
+        }
+    }
+    .video-wrap .video-item .poster {
+        width: 140px !important;
+        height: 100px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .video-wrap .video-item .poster {
+        width: 120px !important;
+        height: 90px !important;
+    }
+}
+
