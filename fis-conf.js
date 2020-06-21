@@ -5,3 +5,22 @@ fis.match('**/*.scss', {
         //fis-parser-node-sass option
     })
 });
+
+fis.match('template/*', {
+    // 设置 release 为 FALSE，不再产出此文件
+    release: false
+}).match('fis-conf.js', {
+    release: false
+}).match('*.json', {
+    release: false
+}).match('*.md', {
+    release: false
+})
+
+
+fis.set('project.ignore', [
+    'dist/**',
+    'node_modules/**',
+    '.git/**',
+    '.svn/**'
+]);
