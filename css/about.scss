@@ -1,18 +1,20 @@
-.company-info{
-    .info-box{
-        padding-bottom: 30px;
-        img{
-            width: 100%;
-            margin: 20px 0;
-        }
-    }
-  .company-info_title{
-      padding-bottom: 8px;
-      color: #2e5266;
-      margin-bottom: 10px;
-      span{
-          padding-bottom: 9px;
-          border-bottom: 4px solid #ecc349;
-      }
-  }
+/* about */
+.company-info .info-box {
+    padding-bottom: 30px;
+}
+
+.company-info .info-box img {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.company-info .company-info_title {
+    padding-bottom: 8px;
+    color: #2e5266;
+    margin-bottom: 10px;
+}
+
+.company-info .company-info_title span {
+    padding-bottom: 9px;
+    border-bottom: 4px solid #ecc349;
 }

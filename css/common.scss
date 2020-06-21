@@ -13,6 +13,8 @@ html,
 body {
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     background-color: #f8f9fa;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 ul,
@@ -61,6 +63,15 @@ button {
 }
 
 /* header */
+.nav-wrap {
+    height: 56px;
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}
+
 .navbar-header #navlist {
     position: absolute;
     top: 70px;

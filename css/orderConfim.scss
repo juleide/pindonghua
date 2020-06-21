@@ -1,79 +1,83 @@
-.order-confirm {
-    .order-box {
-        color: #495057;
-        .name {
-            text-align: center;
-            margin-bottom: 10px;
-        }
+/* order confirm */
+.order-confirm .order-box {
+    color: #495057;
+}
 
-        .div {
-            width: 100%;
-            border: 1px solid #ced4da;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            overflow: hidden;
+.order-confirm .order-box .name {
+    text-align: center;
+    margin-bottom: 10px;
+}
 
-            .title {
-                display: inline-block;
-                width: 30%;
-                text-align: center;
-                min-width: 120px;
-                line-height: 28px;
-                border-right: 1px solid #e9ecef;
-                text-indent: 10px;
-                background-color: #e9ecef;
-               
-            }
+.order-confirm .order-box .div {
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
 
-            .input {
-                flex: 1;
-                padding-left: 20px;
-                height: 28px;
-                line-height: 28px;
-            }
+.order-confirm .order-box .div .title {
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    min-width: 120px;
+    line-height: 28px;
+    border-right: 1px solid #e9ecef;
+    text-indent: 10px;
+    background-color: #e9ecef;
+}
 
-            .money {
-                flex: 1;
-                height: 28px;
-                line-height: 28px;
-                display: flex;
-                .m-box {
-                    width: 50%;
-                    white-space: nowrap;
-                }
-                .right-border {
-                    border-right: 1px solid #ddd;
-                }
-                font {
-                    font-size: 12px;
-                }
-            }
+.order-confirm .order-box .div .input {
+    flex: 1;
+    padding-left: 20px;
+    height: 28px;
+    line-height: 28px;
+}
 
-            &.flex {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-        }
+.order-confirm .order-box .div .money {
+    flex: 1;
+    height: 28px;
+    line-height: 28px;
+    display: flex;
+}
 
-        .pay-channel {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            .box {
-                width: 45%;
-                height: 40px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                outline: none;
-                img {
-                    width: 24px;
-                    height: 24px;
-                    margin-right: 5px;
-                    vertical-align: middle;
-                }
-            }
-        }
-    }
+.order-confirm .order-box .div .money .m-box {
+    width: 50%;
+    white-space: nowrap;
+}
+
+.order-confirm .order-box .div .money .right-border {
+    border-right: 1px solid #ddd;
+}
+
+.order-confirm .order-box .div .money font {
+    font-size: 12px;
+}
+
+.order-confirm .order-box .div.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-confirm .order-box .pay-channel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.order-confirm .order-box .pay-channel .box {
+    width: 45%;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.order-confirm .order-box .pay-channel .box img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
 }
 
