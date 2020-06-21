@@ -1,7 +1,9 @@
 $(function () { 
-    $(document).on("click", function () {
+    $('#maskbox').on("click", function (e) {
         $('#navlist').collapse('hide');
-        $('#pc-change').collapse('hide')
     });
-    
+
+    $(document).on("click",function(){
+        $('#pc-change').collapse('hide');
+    })
 });

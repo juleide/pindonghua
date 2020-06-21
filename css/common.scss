@@ -77,21 +77,6 @@ button {
     }
 }
 
-.navbar-header #navlist {
-    position: absolute;
-    top: 70px;
-    z-index: 10;
-    color: #8e9ba3;
-    span.align-middle {
-        display: inline-block;
-        width: 90px;
-        padding-left: 9px;
-        text-align-last: justify;
-        text-align: justify;
-        text-justify: distribute-all-lines;
-    }
-
-}
 
 #courselist{
     li{
@@ -108,6 +93,45 @@ button {
     li:last-child{
         padding-bottom: 8px;
     }
+}
+
+#navlist{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    .navlist-content {
+        position: absolute;
+        top: 90px;
+        left: 7%;
+        z-index: 10;
+        color: #8e9ba3;
+        width: 153px;
+        background: #fff;
+        z-index: 200;
+        span.align-middle {
+            display: inline-block;
+            width: 90px;
+            padding-left: 9px;
+            text-align-last: justify;
+            text-align: justify;
+            text-justify: distribute-all-lines;
+        }
+    
+    }
+}
+
+#maskbox{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1
 }
 
 /* content-box */
