@@ -62,13 +62,13 @@
                         </a>
                         <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
                             title="添加收藏夹">
-                            <img src="img/add.png" alt="" srcset="">
+                            <img src="img/add.png" alt="" srcset="" onclick="addCollection()">
                         </a>
                         <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
                             title="复制翻译内容">
                             <img src="img/copy.png" alt="" srcset="">
                         </a>
-                        <a href="javascript:;"  data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
+                        <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
                             title="切换注音" class="pc-change_icon">
                             <img src="img/change.png" alt="" srcset="" data-toggle="collapse" data-target="#pc-change">
                         </a>
@@ -163,45 +163,82 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
     <script src="/js/common.js"></script>
     <script>
-
-
         function showmobileChose() {
             $('.mobile-change').show();
             var swipersff = new Swiper('.swiper-container', {
-                direction: 'vertical', autoHeight: true, slidesPerView: 3, centeredSlides: true, observer: true, observeParents: true, observeSlideChildren: true,
+                direction: 'vertical',
+                autoHeight: true,
+                slidesPerView: 3,
+                centeredSlides: true,
+                observer: true,
+                observeParents: true,
+                observeSlideChildren: true,
                 on: {
                     slideChangeTransitionEnd: function () {
-                        var activeIndex  = this.activeIndex;
+                        var activeIndex = this.activeIndex;
                         var target = document.getElementsByClassName('mobile-option')[activeIndex];
                         getListValve(target)
                     },
                 }
             });
         }
+
         function hidemobileChose() {
             $('.mobile-change').hide()
         }
 
-        function getListValve(target){
+        function getListValve(target) {
             console.log($(target).attr('value'));
-            
+
             return $(target).attr('value');
-            
+
         }
 
-
+        // 点击收藏图标
+        function addCollection() {
+            // 判断若未登录  弹出模态框
+            $('#myModal').modal('show');
+        }
     </script>
+    <!-- 点击收藏 未登录弹出模态框 -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">提示</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 模态框主体 -->
+                <div class="modal-body">
+                    <form>
+                        <input class="form-control"></input>
+                    </form>
+                </div>
+
+                <!-- 模态框底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">提交</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
     <!-- mobile change-translate -->
     <div class="select-moob mobile-change">
         <div class="select-moob-cover" onclick="hidemobileChose()"></div>
@@ -215,11 +252,14 @@
                     class="swiper-container sw-select swiper-container-initialized swiper-container-vertical swiper-container-autoheight swiper-container-ios">
                     <div class="swiper-wrapper"
                         style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); height: 48px;">
-                        <div class="swiper-slide swiper-slide-prev mobile-option" value="1" style="height: 48px;">拼东话®粤语自然拼读音标
+                        <div class="swiper-slide swiper-slide-prev mobile-option" value="1" style="height: 48px;">
+                            拼东话®粤语自然拼读音标
                         </div>
-                        <div class="swiper-slide swiper-slide-active mobile-option" value="2" style="height: 48px;">拼东话®自然拼读音标（上标）
+                        <div class="swiper-slide swiper-slide-active mobile-option" value="2" style="height: 48px;">
+                            拼东话®自然拼读音标（上标）
                         </div>
-                        <div class="swiper-slide swiper-slide-next mobile-option" value="3" style="height: 48px;">香港语言学会粤拼
+                        <div class="swiper-slide swiper-slide-next mobile-option" value="3" style="height: 48px;">
+                            香港语言学会粤拼
                         </div>
                         <div class="swiper-slide mobile-option" value="4" style="height: 48px;">关闭注音</div>
                     </div> <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
