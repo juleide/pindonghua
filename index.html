@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-    <link rel="stylesheet" href="./css/common.scss">
     <link rel="stylesheet" href="./css/home.scss">
+    <link rel="stylesheet" href="./css/common.scss">
     <title>拼东话</title>
 </head>
 
@@ -68,20 +68,20 @@
                             title="复制翻译内容">
                             <img src="img/copy.png" alt="" srcset="">
                         </a>
-                        <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
+                        <a href="javascript:;" data-toggle="collapse" data-target="#pc-change" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
                             title="切换注音" class="pc-change_icon">
-                            <img src="img/change.png" alt="" srcset="" onclick="showpcChose()">
+                            <img src="img/change.png" alt="" srcset="">
                         </a>
                         <a href="javascript:;" class="mobile-chang_icon">
                             <img src="img/change.png" alt="" srcset="" onclick="showmobileChose()">
                         </a>
                     </div>
                     <!-- pc change translate -->
-                    <ul class="change-list pc-change">
+                    <ul class="change-list collapse" id="pc-change">
                         <li class="text-center px-1" value="1" onclick="getListValve(this)">拼东话®粤语自然拼读音标</li>
                         <li class="text-center px-1" value="2" onclick="getListValve(this)">拼东话®自然拼读音标（上标） </li>
                         <li class="text-center px-1" value="3" onclick="getListValve(this)">香港语言学会粤拼</li>
-                        <li class="text-center px-1" value="4" onclick="closeTranslate()">关闭注音 </li>
+                        <li class="text-center px-1" value="4" onclick="getListValve(this)">关闭注音 </li>
                     </ul>
 
                     <div class="pt-2 border-top phonetic-box">
@@ -181,12 +181,8 @@
 
         })
         function closeTranslate() {
-            $('.change-list').hide();
+           
             $('.phonetic-box').hide()
-        }
-
-        function showpcChose() {
-            $('.pc-change').show()
         }
 
         function showmobileChose() {

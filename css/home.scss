@@ -96,8 +96,11 @@
             position: relative;
         }
 
-        .change-list {
+        .mobile-change{
             display: none;
+        }
+
+        .change-list {
             position: absolute;
             top: 120px;
             right: 10%;

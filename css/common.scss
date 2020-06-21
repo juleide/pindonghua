@@ -113,11 +113,12 @@ button {
 /* content-box */
 .content-box {
     width: 100vw;
+    min-height: calc(100vh - 80px);
     background: url('../img/background4.jpg') no-repeat;
     background-size: 100% 100vh;
     padding: 30px 0;
     margin-top: 24;
-
+    background-attachment: fixed;
     .white-content {
         width: 700px;
         min-height: 500px;
@@ -126,7 +127,7 @@ button {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         margin: 0 auto;
-        padding: 10px 30px;
+        padding: 20px 30px;
     }
 }
 
