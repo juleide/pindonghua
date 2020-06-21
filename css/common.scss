@@ -166,6 +166,7 @@ button {
     html, body {
       background: #fff;
       font-size: 14px;
+      padding-top: 40px;
     }
     body .tooltip{display: none;}
     .nav-wrap {
@@ -208,6 +209,9 @@ button {
     .video-wrap .video-item .poster {
       width: 140px !important;
       height: 100px !important;
+    }
+    .item /deep/ .col-xl-auto{
+        padding: 0 !important;
     }
   }
   
