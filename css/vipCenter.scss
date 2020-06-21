@@ -1,14 +1,6 @@
-.usercenter-box .list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .usercenter-box .list .item {
-    // width: 45%;
     height: 200px;
-    // margin: 0 10% 10% 0;
     margin-bottom: 10%;
-    background-color: #f6f6f6;
 }
 
 .usercenter-box .list .item .content {
@@ -17,6 +9,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: #f6f6f6;
 }
 
 .usercenter-box .list .item .content .title .img {
@@ -48,6 +41,7 @@
 
 .usercenter-box .list .item .buy {
     width: 100%;
+    display: inline-block;
     background-color: #e6c35f;
     line-height: 30px;
     text-align: center;
