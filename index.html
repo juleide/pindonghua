@@ -68,9 +68,9 @@
                             title="复制翻译内容">
                             <img src="img/copy.png" alt="" srcset="">
                         </a>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#pc-change" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
+                        <a href="javascript:;"  data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
                             title="切换注音" class="pc-change_icon">
-                            <img src="img/change.png" alt="" srcset="">
+                            <img src="img/change.png" alt="" srcset="" data-toggle="collapse" data-target="#pc-change">
                         </a>
                         <a href="javascript:;" class="mobile-chang_icon">
                             <img src="img/change.png" alt="" srcset="" onclick="showmobileChose()">
@@ -175,15 +175,6 @@
     <script src="/js/common.js"></script>
     <script>
 
-        //js 提示
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-
-        })
-        function closeTranslate() {
-           
-            $('.phonetic-box').hide()
-        }
 
         function showmobileChose() {
             $('.mobile-change').show();
