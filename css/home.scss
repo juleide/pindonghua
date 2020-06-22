@@ -27,6 +27,7 @@
             padding: 0;
             resize: none;
             box-shadow: none;
+            padding-right: 30px;
             background: #eee;
         }
 
@@ -81,6 +82,7 @@
     }
 
     .translate-content {
+        display: none;
         background: #2e5266;
 
         img {
@@ -122,6 +124,31 @@
         .mobile-chang_icon {
             display: none;
         }
+    }
+}
+
+.textarea-clear-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 25px;
+    height: 25px;
+    display: none;
+    background-repeat: no-repeat;
+    background-image: url(../img/index_z_b19b64f.png);
+    background-position: -20px -10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 769px) {
+    .translate-left {
+        min-height: 150px !important;
+        .form-control {
+            height: 100px !important;
+        }
+    }
+    .translate-right {
+        display: none !important;
     }
 }
 

@@ -30,17 +30,20 @@
                 <div class="translate-left">
                     <form role="form">
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="在此输入或粘贴文本获取粤语翻译及发音"></textarea>
+                            <span id="clear" class="textarea-clear-btn" data-trigger="hover" data-toggle="tooltip"
+                                data-placement="bottom" title="清除文字"></span>
+                            <textarea id="text" class="form-control" placeholder="在此输入或粘贴文本获取粤语翻译及发音"></textarea>
                         </div>
                     </form>
                     <div class="fix-btn">
-                        <button class="btn trans-btn">翻译</button>
-                        <button class="btn spell-btn">注音</button>
+                        <button id="trans-btn" class="btn trans-btn">翻译</button>
+                        <button id="spell-btn" class="btn spell-btn">注音</button>
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-xs-12 col-sm-12 col-md-6" id="code-content">
-                <div class="translate-right">
+            <!-- translate -->
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <div id="qrcode" class="translate-right">
                     <div class="qrcode-box">
                         <img src="./img/gzh.png">
                         <p>【拼出广东话】<br>关注微信公众号</p>
@@ -50,10 +53,7 @@
                         <p>【拼出广东话】<br>关注微信小程序</p>
                     </div>
                 </div>
-            </div> -->
-            <!-- translate -->
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="translate-content">
+                <div id="translate" class="translate-content">
                     <p class="text-justify text-white">翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容</p>
                     <div class="button-content d-flex justify-content-between w-75 pb-3">
                         <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
@@ -93,7 +93,6 @@
                         <p class="text-justify text-white">
                             <span class="text-nowrap ">内容<span class="pron-text">gei1/gei2 </span></span>
                             <span class="text-nowrap ">内容<span class="pron-text">gei1/gei2 </span></span>
-
                         </p>
                     </div>
 
@@ -156,10 +155,53 @@
             </div>
         </div>
     </div>
-
     <link rel="import" href="./page/template/footer.html?__inline">
+    <!-- 点击收藏 未登录弹出模态框 -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">提示</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    会员特权，请登录后使用
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
+    <!-- mobile change-translate -->
+    <div class="select-moob mobile-change">
+        <div class="select-moob-cover" onclick="hidemobileChose()"></div>
+        <div class="select-moob-container">
+            <div class="select-moob-title">
+                <div class="cancel" onclick="hidemobileChose()">取消</div>
+                <div class="determine">确定</div>
+            </div>
+            <div class="select-moob-content">
+                <div
+                    class="swiper-container sw-select swiper-container-initialized swiper-container-vertical swiper-container-autoheight swiper-container-ios">
+                    <div class="swiper-wrapper"
+                        style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); height: 48px;">
+                        <div class="swiper-slide swiper-slide-prev mobile-option" value="1" style="height: 48px;">
+                            拼东话®粤语自然拼读音标
+                        </div>
+                        <div class="swiper-slide swiper-slide-active mobile-option" value="2" style="height: 48px;">
+                            拼东话®自然拼读音标（上标）
+                        </div>
+                        <div class="swiper-slide swiper-slide-next mobile-option" value="3" style="height: 48px;">
+                            香港语言学会粤拼
+                        </div>
+                        <div class="swiper-slide mobile-option" value="4" style="height: 48px;">关闭注音</div>
+                    </div> <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -174,6 +216,43 @@
     <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
     <script src="/js/common.js"></script>
     <script>
+        // 输入框聚焦 显示删除按钮
+        var text = document.getElementById('text');
+        var clear = document.getElementById('clear');
+        text.oninput = function (e) {
+            if (!!e.target.value) {
+                clear.style.display = 'inline';
+            } else {
+                clear.style.display = 'none';
+            }
+        }
+
+        // 点击清空按钮 清空文本内容
+        clear.onclick = function () {
+            text.value = '';
+            clear.style.display = 'none';
+        }
+
+        // 点击翻译按钮
+        var trans = document.getElementById('trans-btn');
+        trans.onclick = function () {
+            showTranslate();
+        }
+
+        // 点击注音按钮
+        var spell = document.getElementById('spell-btn');
+        spell.onclick = function () {
+            showTranslate();
+        }
+
+        // 显示翻译框
+        function showTranslate() {
+            var transBox = document.getElementById('translate');
+            var qrcode = document.getElementById('qrcode');
+            transBox.style.display = 'block';
+            qrcode.style.display = 'none';
+        }
+
         function showmobileChose() {
             $('.mobile-change').show();
             var swipersff = new Swiper('.swiper-container', {
@@ -211,62 +290,6 @@
             $('#myModal').modal('show');
         }
     </script>
-    <!-- 点击收藏 未登录弹出模态框 -->
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <!-- 模态框头部 -->
-                <div class="modal-header">
-                    <h4 class="modal-title">提示</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- 模态框主体 -->
-                <div class="modal-body">
-                    <form>
-                        <input class="form-control"></input>
-                    </form>
-                </div>
-
-                <!-- 模态框底部 -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">提交</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <!-- mobile change-translate -->
-    <div class="select-moob mobile-change">
-        <div class="select-moob-cover" onclick="hidemobileChose()"></div>
-        <div class="select-moob-container">
-            <div class="select-moob-title">
-                <div class="cancel" onclick="hidemobileChose()">取消</div>
-                <div class="determine">确定</div>
-            </div>
-            <div class="select-moob-content">
-                <div
-                    class="swiper-container sw-select swiper-container-initialized swiper-container-vertical swiper-container-autoheight swiper-container-ios">
-                    <div class="swiper-wrapper"
-                        style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); height: 48px;">
-                        <div class="swiper-slide swiper-slide-prev mobile-option" value="1" style="height: 48px;">
-                            拼东话®粤语自然拼读音标
-                        </div>
-                        <div class="swiper-slide swiper-slide-active mobile-option" value="2" style="height: 48px;">
-                            拼东话®自然拼读音标（上标）
-                        </div>
-                        <div class="swiper-slide swiper-slide-next mobile-option" value="3" style="height: 48px;">
-                            香港语言学会粤拼
-                        </div>
-                        <div class="swiper-slide mobile-option" value="4" style="height: 48px;">关闭注音</div>
-                    </div> <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
