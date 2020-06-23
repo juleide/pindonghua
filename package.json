@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": " fis3 server start -p 8848",
-    "dev": "fis3 release -wL",
+    "dev": "npm run start && fis3 release -wL",
     "build": "fis3 release prod -d ./dist"
   },
   "dependencies": {},
