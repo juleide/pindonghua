@@ -90,6 +90,11 @@ button {
     color: #8e9ba3;
     background-color: #f8f9fa;
   }
+
+  .navbar-header #navlist img{
+      width: 18px;
+      height: 18px;
+  }
   
   .navbar-header #navlist span.align-middle {
     display: inline-block;
@@ -98,6 +103,7 @@ button {
     line-height: 18px;
     height: 18px;
     text-align: justify;
+    padding-right: 4px;
     
   }
 
@@ -116,6 +122,7 @@ button {
             width: 18px;
             text-align: center;
             display: inline-block;
+            line-height: 18px;
         }
         .align-middle{
             width: 80px;
