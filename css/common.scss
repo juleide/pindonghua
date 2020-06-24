@@ -169,6 +169,11 @@ button {
     float: right;
 }
 
+// 模态框 强制去掉padding
+.modal-open {
+    padding: 0 !important;
+}
+
 
 
 @media screen and (min-width:600px) and (max-width:1024px){

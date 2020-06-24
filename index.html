@@ -165,7 +165,7 @@
                     会员特权，请登录后使用
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">确定</button>
+                    <button type="button" id="close-modal" class="btn btn-secondary">确定</button>
                 </div>
             </div>
         </div>
@@ -228,6 +228,11 @@
             // 判断若未登录  弹出模态框
             $('#myModal').modal('show');
         }
+
+        // 模态框点击确定 跳转登录页
+        $('#close-modal').on('click', function () {
+            window.location.href="page/login.html"
+        })
     </script>
 </body>
 
