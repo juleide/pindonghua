@@ -1,6 +1,15 @@
 .usercenter-box .list .item {
     height: 200px;
     margin-bottom: 10%;
+    position: relative;
+}
+
+.usercenter-box .list .item  .sale-icon{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:-10px;
+    left: -10px;
 }
 
 .usercenter-box .list .item .content {
@@ -78,3 +87,26 @@
 .paln-table .plus-content {
     width: 41%;
 }
+
+.size-center{
+    margin: 0 auto;
+    width: 35%;
+    height: 20px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.size-center::after{
+    content:"";
+    display: inline-block;
+    width:100%;
+    overflow:hidden;
+    height:0;
+  }
+
+  @media screen and (min-width: 320px)and (max-width: 750px) {
+    .usercenter-box .list .item  .sale-icon{
+        left: 4px;
+        
+    }
+  }
