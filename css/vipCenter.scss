@@ -1,5 +1,31 @@
+.btn{
+    color: #fff !important;
+    position: relative;
+    .arrow-up{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 10px;
+        height: 10px;
+    }
+    .arrow-down{
+        display: none;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 10px;
+        height: 10px;
+    }
+}
+.tableVip{
+    display: none;
+}
+.usercenter-box .list{
+    margin-top: 20px;
+}
 .usercenter-box .list .item {
     height: 200px;
+    width: 50%;
     margin-bottom: 10%;
     position: relative;
 }

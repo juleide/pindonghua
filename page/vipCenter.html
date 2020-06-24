@@ -39,9 +39,8 @@
             </div>
             <a href="./collection.html" class="btn btn-bg1  w-100 mb-3"><div class="size-center">收  藏  夹</div> </a>
             <a href="./orderList.html" class="btn btn-bg2  w-100 mb-3"><div class="size-center">购  买  记  录</div> </a>
-            <a href="#delayTable" class="btn btn-bg1  w-100  mb-3"><div class="size-center">了 解 会 员 权 益</div></a>
-            <a href="./orderConfirm.html" class="btn btn-bg2  w-100  mb-3"><div class="size-center">会  员  续  期</div> </a>
-            <table id="delayTable" class="table paln-table" cellspacing="2">
+            <a class="btn btn-bg1  w-100  mb-3"><div class="size-center">了 解 会 员 权 益</div><img src="/img/Triangle-up.png" class="arrow-up" /><img src="/img/Triangle-down.png" class="arrow-down" /></a>
+            <table class="table tableVip paln-table" cellspacing="2">
                 <thead>
                     <tr>
                         <th class="text-center info-content">方案对比详情
@@ -125,6 +124,8 @@
                     </tr>
                 </tbody>
             </table>
+            <a href="./orderConfirm.html" class="btn btn-bg2  w-100  mb-3"><div class="size-center">会  员  续  期</div> </a>
+            
             <div class="list row">
 
                 <div class="item col-xs-12 col-sm-12 col-md-6">
@@ -201,6 +202,18 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
     <script src="/js/common.js"></script>
+    <script>
+        $('.arrow-up').on('click', function(){
+            $('.arrow-down').css('display', 'block')
+            $('.tableVip').css('display', 'block')
+            $(this).css('display', 'none')
+        })
+        $('.arrow-down').on('click', function(){
+            $('.arrow-up').css('display', 'block')
+            $('.tableVip').css('display', 'none')
+            $(this).css('display', 'none')
+        })
+    </script>
 </body>
 
 </html>
