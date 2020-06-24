@@ -12,7 +12,7 @@ a:focus {
 html,
 body {
     font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #fff;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -73,7 +73,7 @@ button {
         width: 100%;
         z-index: 100;
         padding: 20px 0;
-        background: #f8f9fa;
+        background: #fff;
     }
 
     a.w50 {
@@ -90,6 +90,11 @@ button {
     color: #8e9ba3;
     background-color: #f8f9fa;
   }
+
+  .navbar-header #navlist img{
+      width: 18px;
+      height: 18px;
+  }
   
   .navbar-header #navlist span.align-middle {
     display: inline-block;
@@ -98,6 +103,7 @@ button {
     line-height: 18px;
     height: 18px;
     text-align: justify;
+    padding-right: 4px;
     
   }
 
@@ -116,6 +122,7 @@ button {
             width: 18px;
             text-align: center;
             display: inline-block;
+            line-height: 18px;
         }
         .align-middle{
             width: 80px;
