@@ -11,5 +11,7 @@ $(function () {
 
     $(document).on("click",function(){
         $('#changeSelect').collapse('hide');
-    })
+    });
 });
+
+
