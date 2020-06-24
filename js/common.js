@@ -10,6 +10,6 @@ $(function () {
     });
 
     $(document).on("click",function(){
-        $('#pc-change').collapse('hide');
+        $('#changeSelect').collapse('hide');
     })
 });

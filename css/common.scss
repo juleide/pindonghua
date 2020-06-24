@@ -95,11 +95,19 @@ button {
     display: inline-block;
     width: 90px;
     padding-left: 9px;
-    text-align-last: justify;
+    line-height: 18px;
+    height: 18px;
     text-align: justify;
-    text-justify: distribute-all-lines;
+    
   }
 
+  .navbar-header #navlist span.align-middle::after{
+    content:"";
+    display: inline-block;
+    width:100%;
+    overflow:hidden;
+    height:0;
+  }
 
 #courselist{
     li{
