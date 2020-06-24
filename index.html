@@ -186,40 +186,34 @@
     <script src="/js/common.js"></script>
     <script>
         // 输入框聚焦 显示删除按钮
-        var text = document.getElementById('text');
-        var clear = document.getElementById('clear');
-        text.oninput = function (e) {
+        $('#text').on('input', function(e) {
             if (!!e.target.value) {
-                clear.style.display = 'inline';
+                $('#clear').css('display', 'inline');
             } else {
-                clear.style.display = 'none';
+                $('#clear').css('display', 'none');
             }
-        }
+        })
 
         // 点击清空按钮 清空文本内容
-        clear.onclick = function () {
-            text.value = '';
-            clear.style.display = 'none';
-        }
+        $('#clear').on('click', function() {
+            $('#text').val('');
+            $('#clear').css('display', 'none');
+        })
 
         // 点击翻译按钮
-        var trans = document.getElementById('trans-btn');
-        trans.onclick = function () {
+        $('#trans-btn').on('click', function() {
             showTranslate();
-        }
+        })
 
         // 点击注音按钮
-        var spell = document.getElementById('spell-btn');
-        spell.onclick = function () {
+        $('#spell-btn').on('click', function() {
             showTranslate();
-        }
+        })
 
         // 显示翻译框
         function showTranslate() {
-            var transBox = document.getElementById('translate');
-            var qrcode = document.getElementById('qrcode');
-            transBox.style.display = 'block';
-            qrcode.style.display = 'none';
+            $('#translate').css('display', 'block');
+            $('#qrcode').css('display', 'none');
         }
 
         function getListValve(target) {
