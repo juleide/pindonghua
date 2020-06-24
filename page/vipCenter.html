@@ -37,9 +37,16 @@
                 <p class="form-control">至2020年5月20日,还剩235天</p>
 
             </div>
-            <a href="./collection.html" class="btn btn-bg1  w-100 mb-3"><div class="size-center">收  藏  夹</div> </a>
-            <a href="./orderList.html" class="btn btn-bg2  w-100 mb-3"><div class="size-center">购  买  记  录</div> </a>
-            <a class="btn btn-bg1  w-100  mb-3"><div class="size-center">了 解 会 员 权 益</div><img src="/img/Triangle-up.png" class="arrow-up" /><img src="/img/Triangle-down.png" class="arrow-down" /></a>
+            <a href="./collection.html" class="btn btn-bg1  w-100 mb-3">
+                <div class="size-center">收 藏 夹</div>
+            </a>
+            <a href="./orderList.html" class="btn btn-bg2  w-100 mb-3">
+                <div class="size-center">购 买 记 录</div>
+            </a>
+            <a class="btn btn-bg1 arrow w-100  mb-3">
+                <div class="size-center">了 解 会 员 权 益</div><img src="/img/Triangle-up.png" class="arrow-up" /><img
+                    src="/img/Triangle-down.png" class="arrow-down" />
+            </a>
             <table class="table tableVip paln-table" cellspacing="2">
                 <thead>
                     <tr>
@@ -124,8 +131,10 @@
                     </tr>
                 </tbody>
             </table>
-            <a href="./orderConfirm.html" class="btn btn-bg2  w-100  mb-3"><div class="size-center">会  员  续  期</div> </a>
-            
+            <a href="./orderConfirm.html" class="btn btn-bg2  w-100  mb-3">
+                <div class="size-center">会 员 续 期</div>
+            </a>
+
             <div class="list row">
 
                 <div class="item col-xs-12 col-sm-12 col-md-6">
@@ -184,7 +193,7 @@
                     <a href="./orderConfirm.html" class="buy rounded">购 买</a>
                 </div>
             </div>
-          
+
         </div>
     </div>
 
@@ -203,15 +212,19 @@
     </script>
     <script src="/js/common.js"></script>
     <script>
-        $('.arrow-up').on('click', function(){
-            $('.arrow-down').css('display', 'block')
-            $('.tableVip').css('display', 'block')
-            $(this).css('display', 'none')
-        })
-        $('.arrow-down').on('click', function(){
-            $('.arrow-up').css('display', 'block')
-            $('.tableVip').css('display', 'none')
-            $(this).css('display', 'none')
+        let index = 1
+        $('.arrow').on('click', function () {
+            if (index === 1) {
+                $('.arrow-down').css('display', 'block')
+                $('.tableVip').css('display', 'block')
+                $('.arrow-up').css('display', 'none')
+                index = 2
+            } else if (index === 2) {
+                $('.arrow-up').css('display', 'block')
+                $('.tableVip').css('display', 'none')
+                $('.arrow-down').css('display', 'none')
+                index = 1
+            }
         })
     </script>
 </body>
