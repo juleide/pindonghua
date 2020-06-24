@@ -216,11 +216,14 @@
             $('#qrcode').css('display', 'none');
         }
 
+        // 点击下拉框option
         function getListValve(target) {
+            let val = $(target).attr('value');
+            if(val == '2' || val == '3') { // 点击上标版和香港语言协会 判断若未登录 弹窗提示
+                $('#myModal').modal('show');
+                return
+            }
             alert($(target).attr('value'));
-
-            return $(target).attr('value');
-
         }
 
         // 点击收藏图标
