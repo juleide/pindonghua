@@ -133,7 +133,7 @@ button {
     width: 100vw;
     min-height: calc(100vh - 80px);
     background: url('../img/background4.jpg') no-repeat;
-    background-size: 100% 100vh;
+    background-size: 100% auto;
     padding: 30px 0;
     margin-top: 24;
     background-attachment: fixed;
