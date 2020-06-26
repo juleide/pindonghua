@@ -53,7 +53,8 @@
                     </div>
                 </div>
                 <div id="translate" class="translate-content">
-                    <p class="text-justify text-white">翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容</p>
+                    <p class="text-justify text-white" id="translate-text">
+                        翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容翻译内容</p>
                     <div class="button-content d-flex justify-content-between w-75 pb-3">
                         <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
                             title="发音">
@@ -68,18 +69,19 @@
                             <img src="img/copy.png" alt="" srcset="">
                         </a>
                         <a href="javascript:;" data-trigger="hover" data-toggle="tooltip" data-placement="bottom"
-                            title="切换注音"  role="button" class=" change-option">
-                            <img src="img/change.png" alt="" srcset="" data-toggle="collapse" data-target="#changeSelect">
-                
+                            title="切换注音" role="button" class=" change-option">
+                            <img src="img/change.png" alt="" srcset="" data-toggle="collapse"
+                                data-target="#changeSelect">
                         </a>
+                        <!--  change translate -->
+                        <ul class="change-list collapse" id="changeSelect">
+                            <li class="text-center px-1" value="1" onclick="getListValve(this)">拼东话®粤语自然拼读音标</li>
+                            <li class="text-center px-1" value="2" onclick="getListValve(this)">拼东话®自然拼读音标（上标） </li>
+                            <li class="text-center px-1" value="3" onclick="getListValve(this)">香港语言学会粤拼</li>
+                            <li class="text-center px-1" value="4" onclick="getListValve(this)">关闭注音 </li>
+                        </ul>
                     </div>
-                    <!--  change translate -->
-                    <ul class="change-list collapse" id="changeSelect">
-                        <li class="text-center px-1" value="1" onclick="getListValve(this)">拼东话®粤语自然拼读音标</li>
-                        <li class="text-center px-1" value="2" onclick="getListValve(this)">拼东话®自然拼读音标（上标） </li>
-                        <li class="text-center px-1" value="3" onclick="getListValve(this)">香港语言学会粤拼</li>
-                        <li class="text-center px-1" value="4" onclick="getListValve(this)">关闭注音 </li>
-                    </ul>
+
 
                     <div class="pt-2 border-top phonetic-box">
                         <p class="text-justify text-white">
@@ -176,17 +178,17 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="/js/common.js"></script>
     <script>
         // 输入框聚焦 显示删除按钮
-        $('#text').on('input', function(e) {
+        $('#text').on('input', function (e) {
             if (!!e.target.value) {
                 $('#clear').css('display', 'inline');
             } else {
@@ -195,19 +197,23 @@
         })
 
         // 点击清空按钮 清空文本内容
-        $('#clear').on('click', function() {
+        $('#clear').on('click', function () {
             $('#text').val('');
             $('#clear').css('display', 'none');
         })
 
         // 点击翻译按钮
-        $('#trans-btn').on('click', function() {
+        $('#trans-btn').on('click', function () {
             showTranslate();
+            $('#translate-text').show();
+            $('.phonetic-box').show();
         })
 
         // 点击注音按钮
-        $('#spell-btn').on('click', function() {
+        $('#spell-btn').on('click', function () {
             showTranslate();
+            $('.phonetic-box').show();
+            $('#translate-text').hide();
         })
 
         // 显示翻译框
@@ -219,7 +225,23 @@
         // 点击下拉框option
         function getListValve(target) {
             let val = $(target).attr('value');
-            if(val == '2' || val == '3') { // 点击上标版和香港语言协会 判断若未登录 弹窗提示
+            switch (val) {
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case "4":
+                    $('.phonetic-box').hide()
+                    break;
+                default:
+                    break;
+            }
+            if (val == '2' || val == '3') { // 点击上标版和香港语言协会 判断若未登录 弹窗提示
                 $('#myModal').modal('show');
                 return
             }
@@ -234,7 +256,7 @@
 
         // 模态框点击确定 跳转登录页
         $('#close-modal').on('click', function () {
-            window.location.href="page/login.html"
+            window.location.href = "page/login.html"
         })
     </script>
 </body>

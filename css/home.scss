@@ -102,10 +102,14 @@
             display: none;
         }
 
+        .change-option{
+            position: relative;
+        }
+
         .change-list {
             position: absolute;
-            top: 120px;
-            right: 10%;
+            top: 30px;
+            right: -100px;
             z-index: 100;
             color: #859ead;
             font-size: 14px;
