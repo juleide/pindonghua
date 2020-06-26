@@ -21,8 +21,9 @@ $(function () {
     })
 
     // 未登录时 点击收藏夹 显示模态框
-    $('#collect').on('click', function() {
+    $('#collect').on('click', function(event) {
         $('#myModal').modal('show');
+        event.stopPropagation(); 
     })
 
     // 点击模态框 确定按钮 跳转登录页
@@ -31,8 +32,9 @@ $(function () {
     })
 
     // 点击退出登录按钮 显示模态框
-    $('#exit-btn').on('click', function() {
+    $('#exit-btn').on('click', function(event) {
         $('#exitModal').modal('show');
+        event.stopPropagation(); 
     })
 
     // 退出登录模态框 点击确定 跳转登录页
