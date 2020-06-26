@@ -31,14 +31,15 @@
 }
 
 .usercenter-box .list .item  .sale-icon{
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     position: absolute;
     top:-10px;
     left: -10px;
 }
 
 .usercenter-box .list .item .content {
+   
     height: 170px;
     display: flex;
     flex-direction: column;
@@ -58,10 +59,11 @@
 
 .usercenter-box .list .item .content .title .text {
     color: #e6c35f;
+    font-size: 18px;
 }
 
 .usercenter-box .list .item .content .price .price-text {
-    font-size: 22px;
+    font-size: 26px;
     color: #2c5365;
 }
 
@@ -139,8 +141,8 @@
 
   @media screen and (min-width: 320px)and (max-width: 750px) {
     .usercenter-box .list .item  .sale-icon{
-        width: 45px;
-        height: 45px;
+        width: 55px;
+        height: 55px;
         left: 4px;
         
     }
