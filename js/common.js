@@ -25,7 +25,7 @@ $(function () {
 
     // 点击模态框 确定按钮 跳转登录页
     $('#close-modal').on('click', function() {
-        window.location.href = 'page/login.html';
+        window.location.href = '/page/login.html';
     })
 });
 
