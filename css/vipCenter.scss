@@ -31,16 +31,16 @@
 }
 
 .usercenter-box .list .item  .sale-icon{
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     position: absolute;
     top:-10px;
     left: -10px;
 }
 
 .usercenter-box .list .item .content {
-   
-    height: 170px;
+   font-size: 18px;
+    height: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,7 +48,7 @@
 }
 
 .usercenter-box .list .item .content div{
-    margin-top:20px;
+    margin-top:15px;
 }
 
 .usercenter-box .list .item .content .title .img {
@@ -59,11 +59,15 @@
 
 .usercenter-box .list .item .content .title .text {
     color: #e6c35f;
-    font-size: 18px;
+    font-size: 22px;
+}
+
+.usercenter-box .list .item .content .price{
+    color: #2c5365;
 }
 
 .usercenter-box .list .item .content .price .price-text {
-    font-size: 26px;
+    font-size: 32px;
     color: #2c5365;
 }
 
@@ -75,22 +79,24 @@
 
 .usercenter-box .list .item .content .buy-text {
     color: #999;
-    font-size: 14px;
 }
 
 .usercenter-box .list .item .content .buy-active {
     color: #d32f25;
-    font-size: 22px;
+}
+
+.usercenter-box .list .item .content .buy-active  .price-text{
+    color: #d32f25;
 }
 
 .usercenter-box .list .item .buy {
     width: 100%;
     display: inline-block;
-    background-color: #e6c35f;
-    line-height: 30px;
+    background-color: #ebc448;
+    line-height: 40px;
     text-align: center;
     color: white;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .usercenter-box .list .item:nth-of-type(2n+2) {
@@ -143,7 +149,16 @@
     .usercenter-box .list .item  .sale-icon{
         width: 55px;
         height: 55px;
-        left: 4px;
+        left: -2px;
         
     }
+    .usercenter-box .list .item .content{
+        font-size: 16px;
+    }
+    .usercenter-box .list .item .buy{
+        height: 30px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
   }
