@@ -42,9 +42,12 @@
     height: 170px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     background-color: #f6f6f6;
+}
+
+.usercenter-box .list .item .content div{
+    margin-top:20px;
 }
 
 .usercenter-box .list .item .content .title .img {
