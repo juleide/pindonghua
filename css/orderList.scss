@@ -2,17 +2,19 @@
     color: #7d7d7d;
     .order-header{
         background:#e7eced ;
+        
+    }
+    .pay-type,.order-header{
         span{
             display: inline-block;
             width: 90px;
             text-align: center;
         }
-    }
-    .pay-type{
-        span{
-            display: inline-block;
-            width: 90px;
-            text-align: center;
+        & span:first-child{
+            text-align: left;
+        }
+        & span:last-child{
+            text-align: right;
         }
     }
     
