@@ -15,6 +15,7 @@ body {
     background-color: #fff;
     overflow-x: hidden;
     overflow-y: auto;
+    padding-top: 80px;
 }
 
 ul,
@@ -65,7 +66,7 @@ button {
 
 /* header */
 .nav-wrap {
-    height: 80px;
+    // height: 80px;
 
     .navbar {
         position: fixed;
@@ -134,6 +135,10 @@ button {
     li:last-child{
         padding-bottom: 8px;
     }
+}
+
+.collapsing {
+	transition:height .25s linear !important;
 }
 
 
