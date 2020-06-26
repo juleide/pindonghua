@@ -6,12 +6,12 @@
             </a>
             <ul id="navlist" class="list-group  shadow navlist-content collapse" style="height:auto;">
                 <li class="list-group-item border-0">
-                    <a href="/page/collection.html" class="text-muted text-decoration-none">
+                    <a href="javascript:void(0)" id="vip-btn" class="text-muted text-decoration-none">
                         <img src="/img/user_icon.png" alt="" srcset=""><span
                             class="align-middle">会员中心</span></a>
                 </li>
                 <li class="list-group-item border-0">
-                    <a href="/page/collection.html" class="text-muted text-decoration-none">
+                    <a href="javascript:void(0)" id="collect" class="text-muted text-decoration-none">
                         <img src="/img/collection_icon.png" alt="" srcset=""><span
                             class="align-middle">收藏夹</span></a>
                 </li>
@@ -53,4 +53,22 @@
        
         </div>
     </nav>
+</div>
+
+<!-- 未登录弹出模态框 -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">提示</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                会员特权，请登录后使用
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="close-modal" class="btn btn-secondary">确定</button>
+            </div>
+        </div>
+    </div>
 </div>

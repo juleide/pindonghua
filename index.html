@@ -155,24 +155,6 @@
         </div>
     </div>
     <link rel="import" href="./page/template/footer.html?__inline">
-    <!-- 点击收藏 未登录弹出模态框 -->
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">提示</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    会员特权，请登录后使用
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="close-modal" class="btn btn-secondary">确定</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -253,11 +235,6 @@
             // 判断若未登录  弹出模态框
             $('#myModal').modal('show');
         }
-
-        // 模态框点击确定 跳转登录页
-        $('#close-modal').on('click', function () {
-            window.location.href = "page/login.html"
-        })
     </script>
 </body>
 
