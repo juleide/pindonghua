@@ -59,10 +59,13 @@
 
 .usercenter-box .list .item .content .price .price-text {
     font-size: 22px;
+    color: #2c5365;
 }
+
 
 .usercenter-box .list .item .content .price.del {
     text-decoration: line-through;
+    color: #2c5365;
 }
 
 .usercenter-box .list .item .content .buy-text {
@@ -71,7 +74,8 @@
 }
 
 .usercenter-box .list .item .content .buy-active {
-    color: red;
+    color: #d32f25;
+    font-size: 22px;
 }
 
 .usercenter-box .list .item .buy {
