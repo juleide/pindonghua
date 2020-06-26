@@ -50,6 +50,11 @@
                 <img src="/img/user_icon.png" alt="" width="17" height="20">
                 <span class="align-middle">登录</span> 
             </a>
+
+            <!-- <a class="text-muted text-decoration-none w50" href="javascript:void(0)" id="exit-btn" tppabs="">
+                <img src="/img/user_icon.png" alt="" width="17" height="20">
+                <span class="align-middle">退出</span> 
+            </a> -->
        
         </div>
     </nav>
@@ -68,6 +73,25 @@
             </div>
             <div class="modal-footer">
                 <button type="button" id="close-modal" class="btn btn-secondary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 退出登录弹出模态框 -->
+<div class="modal fade" id="exitModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">提示</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                所有会员功能退出后将无法使用，您确认要退出吗
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" id="close-modal2" class="btn btn-secondary">确认退出</button>
             </div>
         </div>
     </div>

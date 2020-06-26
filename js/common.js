@@ -29,6 +29,16 @@ $(function () {
     $('#close-modal').on('click', function() {
         window.location.href = '/page/login.html';
     })
+
+    // 点击退出登录按钮 显示模态框
+    $('#exit-btn').on('click', function() {
+        $('#exitModal').modal('show');
+    })
+
+    // 退出登录模态框 点击确定 跳转登录页
+    $('#close-modal2').on('click', function() {
+        window.location.href = '/page/login.html';
+    })
 });
 
 
