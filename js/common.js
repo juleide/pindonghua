@@ -14,8 +14,10 @@ $(function () {
     });
 
     // 未登录时 点击会员中心 显示模态框
-    $('#vip-btn').on('click', function() {
+    $('#vip-btn').on('click', function(event) {
+        $('#navlist').collapse('show');
         $('#myModal').modal('show');
+        event.stopPropagation(); 
     })
 
     // 未登录时 点击收藏夹 显示模态框
