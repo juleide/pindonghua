@@ -3,6 +3,7 @@ $(function () {
     
     $(document).on("click", function (e) {
         $('#navlist').collapse('hide');
+        $('#courselist').collapse('hide');
     });
     $('.header-course_option').on("click", function (event) {
         $('#courselist').collapse('toggle');
